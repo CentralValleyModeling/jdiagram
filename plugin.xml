@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="gov.ca.water"
+            name="DWR">
+      </category>
+      <view
+            category="gov.ca.water"
+            class="gov.ca.water.jdiagram.views.SchematicView"
+            id="gov.ca.water.jdiagram.views.SchematicView"
+            name="Schematic View">
+      </view>
+      <view
+            category="gov.ca.water"
+            class="gov.ca.water.jdiagram.views.SchematicOverview"
+            id="gov.ca.water.jdiagram.views.SchematicOverview"
+            name="Schematic Overview">
+      </view>
+      <view
+            category="gov.ca.water"
+            class="gov.ca.water.jdiagram.views.SchematicEditorViewA"
+            id="gov.ca.water.jdiagram.views.SchematicEditorViewA"
+            name="Schematic Editor A">
+      </view>
+      <view
+            category="gov.ca.water"
+            class="gov.ca.water.jdiagram.views.SchematicEditorViewB"
+            id="gov.ca.water.jdiagram.views.SchematicEditorViewB"
+            name="Schematic Editor B">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="gov.ca.water.jdiagram.views.SchematicView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+         <view
+               id="gov.ca.water.jdiagram.views.SchematicOverview"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="gov.ca.water.jdiagram.PerspectiveFactory"
+            fixed="true"
+            id="gov.ca.water.jdiagram.perspective"
+            name="Schematic">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="gov.ca.water.jdiagram.SchematicEditorPerspectiveFactory"
+            id="gov.ca.water.jdiagram.schematiceditorperspective"
+            name="Schematic Editor"/>
+   </extension> 
+   <extension
+         point="org.eclipse.search.textSearchQueryProvider">
+      <textSearchQueryProvider
+            class="gov.ca.water.jdiagram.TextSearchQueryProvider"
+            id="gov.ca.water.jdiagram.textSearchQueryProvider1"
+            label="gov.ca.water.jdiagram.textSearchQueryProvider1">
+      </textSearchQueryProvider>
+   </extension>
+
+</plugin>
